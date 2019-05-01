@@ -1,13 +1,22 @@
-// Adds reverse to all Strings
+// Export the Phrase object so it can be used in other files
+module.exports = Phrase;
+
+// Adds 'reverse' to all Strings
 String.prototype.reverse = function() {
   
   return Array.from(this).reverse().join("");  
 }
 
-// Exercise 7.3.1: Returns true if the string is empty or is mostly whitespace
+// Exercise 7.3.1: Returns true if the String is empty or is mostly whitespace
 String.prototype.blank = function() {
 
-  return !!this.match(/^[\s\t\n][\s\t\n]$[\s\t\n]/g);  
+  return !!this.match(/^$|^\s+$/g);
+}
+
+// Exercise 7.3.2: Returns last element of Array
+Array.prototype.last = function() {
+
+  return this.slice(-1);  
 }
 
 // Reverses a string.
